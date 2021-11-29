@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/login"
+        android:name="coursework.gi.kishlish.ui.fragments.Login"
+        android:label="Login"
+        tools:layout="@layout/fragment_login"    >
+        <action
+            android:id="@+id/action_login_to_sign"
+            app:destination="@id/sign" />
+    </fragment>
+    <fragment
+        android:id="@+id/sign"
+        android:name="coursework.gi.kishlish.ui.fragments.Sign"
+        android:label="Sign"
+        tools:layout="@layout/fragment_sign">
+        <action
+            android:id="@+id/action_sign_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/splash"
+        android:name="coursework.gi.kishlish.ui.fragments.Splash"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@layout/fragment_splash"
+            app:popUpToInclusive="false"/>
+    </fragment>
+</navigation>
