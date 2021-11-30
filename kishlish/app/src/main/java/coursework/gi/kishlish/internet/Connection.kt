@@ -4,7 +4,8 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import coursework.gi.kishlish.ui.Toasts
+import android.widget.Toast
+import coursework.gi.kishlish.ui.activity.MainActivity
 
 class Connection {
     fun check(context: Context?): Boolean {
@@ -18,19 +19,19 @@ class Connection {
                 when {
                     capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) ->
                     {
-                        Toasts().showShort(context, "TRANSPORT_CELLULAR")
+                        Toast.makeText(context, "TRANSPORT_CELLULAR", Toast.LENGTH_SHORT).show()
                         return true
                     }
 
                         capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) ->
                         {
-                            Toasts().showShort(context, "TRANSPORT_WIFI")
+                            Toast.makeText(context, "TRANSPORT_WIFI", Toast.LENGTH_SHORT).show()
                             return true
                         }
 
                     capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) ->
                     {
-                        Toasts().showShort(context, "TRANSPORT_ETHERNET")
+                        Toast.makeText(context, "TRANSPORT_ETHERNET", Toast.LENGTH_SHORT).show()
                         return true
                     }
                 }

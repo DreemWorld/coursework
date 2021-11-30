@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_login_to_sign"
             app:destination="@id/sign" />
+        <action
+            android:id="@+id/action_login_to_mainMenu"
+            app:destination="@id/mainMenu" />
     </fragment>
     <fragment
         android:id="@+id/sign"
@@ -30,8 +33,11 @@
         tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splash_to_login"
-            app:destination="@id/login"
-            app:popUpTo="@layout/fragment_splash"
-            app:popUpToInclusive="false"/>
+            app:destination="@id/login" />
     </fragment>
+    <fragment
+        android:id="@+id/mainMenu"
+        android:name="coursework.gi.kishlish.ui.fragments.MainMenu"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" />
 </navigation>
