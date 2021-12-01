@@ -8,7 +8,7 @@
     tools:context=".ui.fragments.Login">
 
     <TextView
-        android:id="@+id/textView_sign_in"
+        android:id="@+id/label_si"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
@@ -18,7 +18,7 @@
         android:textSize="48sp"
         android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/PlainText_username"
+        app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,22 +26,22 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:drawableLeft="@drawable/ic_account"
-        android:drawablePadding="3dp"
-        android:id="@+id/PlainText_username"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_account"
+        android:drawablePadding="3dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editText_password"
+        app:layout_constraintBottom_toTopOf="@+id/login_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:drawableLeft="@drawable/ic_key"
         android:drawablePadding="3dp"
-        android:id="@+id/editText_password"
+        android:id="@+id/login_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -53,7 +53,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/label_fp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
@@ -61,7 +61,7 @@
         android:text="Forget Password?"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_password" />
+        app:layout_constraintTop_toBottomOf="@+id/login_password" />
 
     <Button
         android:id="@+id/btn_login"
@@ -84,18 +84,18 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView_dhaa"
+        android:id="@+id/label_dhaa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:layout_marginBottom="32dp"
         android:text="Don't have an account?"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_sign_up_jump"
+        app:layout_constraintBottom_toTopOf="@+id/label_to_register"
         app:layout_constraintStart_toStartOf="@+id/btn_login_with_email" />
 
     <TextView
-        android:id="@+id/textView_sign_up_jump"
+        android:id="@+id/label_to_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
@@ -108,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView_or"
+        android:id="@+id/label_or"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"

@@ -34,14 +34,14 @@ class Sign : Fragment(R.layout.fragment_sign) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.textViewLoginJump.setOnClickListener {
+        binding.labelToLogin.setOnClickListener {
             navController.navigate(R.id.action_sign_to_login)
         }
         binding.btnRegister.setOnClickListener {
             firebaseAuth = FirebaseAuth.getInstance()
             firebaseAuth.createUserWithEmailAndPassword(
-                binding.editTextEmailOrMobile.text.toString().trim(),
-                binding.editTextPasswordSign.text.toString().trim()
+                binding.emailOrMobile.text.toString().trim(),
+                binding.password.text.toString().trim()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
                     navController.navigate(R.id.action_sign_to_login)

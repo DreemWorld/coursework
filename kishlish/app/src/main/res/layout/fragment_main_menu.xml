@@ -4,12 +4,4 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.MainMenu">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MAIN MENU"
-        android:textSize="100dp"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    tools:context=".ui.fragments.MainMenu"/>
