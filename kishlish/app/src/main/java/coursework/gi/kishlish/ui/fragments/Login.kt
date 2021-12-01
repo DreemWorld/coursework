@@ -28,14 +28,14 @@ class Login : Fragment(R.layout.fragment_login) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.textViewSignUpJump.setOnClickListener {
+        binding.labelToRegister.setOnClickListener {
             navController.navigate(R.id.action_login_to_sign)
         }
         binding.btnLogin.setOnClickListener {
             firebaseAuth = FirebaseAuth.getInstance()
             firebaseAuth.signInWithEmailAndPassword(
-                binding.PlainTextUsername.text.toString().trim(),
-                binding.editTextPassword.text.toString().trim()
+                binding.email.text.toString().trim(),
+                binding.loginPassword.text.toString().trim()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
                     navController.navigate(R.id.action_login_to_mainMenu)
