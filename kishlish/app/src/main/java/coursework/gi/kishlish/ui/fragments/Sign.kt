@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.ktx.Firebase
 import coursework.gi.kishlish.R
 import coursework.gi.kishlish.databinding.ActivityMainBinding
@@ -21,6 +22,7 @@ class Sign : Fragment(R.layout.fragment_sign) {
 
     private lateinit var binding: FragmentSignBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var daatabaseReference: DatabaseReference
     private val navController by lazy { findNavController() }
 
     override fun onCreateView(
@@ -44,6 +46,10 @@ class Sign : Fragment(R.layout.fragment_sign) {
                 binding.password.text.toString().trim()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
+                    val uid = firebaseAuth.currentUser?.uid.toString()
+                    var dateMap = mutableMapOf<String, Any>()
+                    dateMap["id"] = uid
+                    dateMap["name"] = binding.editTextUsernameSign.text
                     navController.navigate(R.id.action_sign_to_login)
                 } else {
                     Toast.makeText(activity, it.exception.toString(), Toast.LENGTH_SHORT).show()
