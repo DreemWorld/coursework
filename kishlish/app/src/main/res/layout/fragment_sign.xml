@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.Sign" >
+    tools:context=".ui.fragments.SignFragment" >
 
     <TextView
         android:id="@+id/label_su"
@@ -16,7 +16,7 @@
         android:textColor="@color/black"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintBottom_toTopOf="@+id/sign_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/sign_username"
         android:layout_width="224dp"
         android:layout_height="44dp"
         android:drawableLeft="@drawable/ic_account"
@@ -32,12 +32,12 @@
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/email_or_mobile"
+        app:layout_constraintBottom_toTopOf="@+id/sign_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/email_or_mobile"
+        android:id="@+id/sign_email"
         android:layout_width="225dp"
         android:layout_height="42dp"
         android:drawableLeft="@drawable/ic_mail"
@@ -45,12 +45,12 @@
         android:ems="10"
         android:hint="Email or Mobile"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintBottom_toTopOf="@+id/sign_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/sign_password"
         android:layout_width="226dp"
         android:layout_height="0dp"
         android:layout_marginBottom="39dp"
