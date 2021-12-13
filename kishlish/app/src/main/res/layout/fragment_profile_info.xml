@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.ProfileInfoFragment">
+
+    <ImageView
+        android:id="@+id/profile_info_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_account"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/profile_info_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/profile_info_name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Имя"
+            android:textSize="@dimen/normal_text" />
+
+        <TextView
+            android:id="@+id/profile_info_surname"
+            android:layout_width="300dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Фамилия"
+            android:textSize="@dimen/normal_text"/>
+
+        <TextView
+            android:id="@+id/profile_info_username"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+
+            android:text="Никнейм"
+            android:textSize="@dimen/normal_text"/>
+
+        <TextView
+            android:id="@+id/profile_info_bio"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="О себе"
+            android:textSize="@dimen/normal_text"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/profile_info_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Изменить данные"
+        app:layout_constraintBottom_toTopOf="@id/profile_info_exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/profile_info_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Сменить пользователя"
+        android:textSize="@dimen/normal_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
