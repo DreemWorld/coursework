@@ -21,12 +21,12 @@ fun AppCompatActivity.replaceFragment(fragment: Fragment, addStack:Boolean = tru
         supportFragmentManager
             .beginTransaction()
             .addToBackStack(null)
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container_upp, fragment)
             .commit()
     } else {
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.fragment_container_upp, fragment)
             .commit()
     }
 }
@@ -35,6 +35,6 @@ fun Fragment.replaceFragment(fragment: Fragment) {
     this.fragmentManager
         ?.beginTransaction()
         ?.addToBackStack(null)
-        ?.replace(R.id.fragment_container, fragment)
+        ?.replace(R.id.fragment_container_upp, fragment)
         ?.commit()
 }
