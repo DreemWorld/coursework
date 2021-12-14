@@ -43,7 +43,7 @@
         android:drawableLeft="@drawable/ic_mail"
         android:drawablePadding="3dp"
         android:ems="10"
-        android:hint="Email or Mobile"
+        android:hint="Email"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/sign_password"
         app:layout_constraintEnd_toEndOf="parent"

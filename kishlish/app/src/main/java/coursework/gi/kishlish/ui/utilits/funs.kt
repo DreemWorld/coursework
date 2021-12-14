@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import coursework.gi.kishlish.R
 
 fun Fragment.showToast(message: String) {
-    Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
+    Toast.makeText(this.context, message, Toast.LENGTH_LONG).show()
 }
 
 fun AppCompatActivity.replaceActivity(activity: AppCompatActivity) {

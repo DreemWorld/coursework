@@ -26,28 +26,19 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/profile_info_name"
+            android:id="@+id/profile_info_fullname"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:gravity="center"
-            android:text="Имя"
+            android:text="Имя и фамилия"
             android:textSize="@dimen/normal_text" />
-
-        <TextView
-            android:id="@+id/profile_info_surname"
-            android:layout_width="300dp"
-            android:gravity="center"
-            android:layout_height="wrap_content"
-            android:text="Фамилия"
-            android:textSize="@dimen/normal_text"/>
 
         <TextView
             android:id="@+id/profile_info_username"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-
             android:text="Никнейм"
             android:textSize="@dimen/normal_text"/>
 
