@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/kishlish_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_account"/>
+
+    <TextView
+        android:id="@+id/kishlish_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@id/kishlish_image"
+        app:layout_constraintTop_toTopOf="@id/kishlish_image"/>
+
+    <TextView
+        android:id="@+id/kishlish_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:text="Description"
+        app:layout_constraintStart_toEndOf="@id/kishlish_image"
+        app:layout_constraintTop_toBottomOf="@id/kishlish_name" />
+
+    <TextView
+        android:id="@+id/kishlish_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="left"
+        android:text="Price"
+        app:layout_constraintStart_toEndOf="@id/kishlish_image"
+        app:layout_constraintBottom_toBottomOf="@id/kishlish_image" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

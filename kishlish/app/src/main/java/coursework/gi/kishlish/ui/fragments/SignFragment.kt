@@ -22,7 +22,7 @@ class SignFragment : Fragment(R.layout.fragment_sign) {
             password = sign_password.text.toString()
             username = sign_username.text.toString()
             if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
-                showToast("Данные не введены")
+                showToast("Enter the data")
             } else {
                 createUserAndDatabaseFields()
             }
@@ -41,14 +41,12 @@ class SignFragment : Fragment(R.layout.fragment_sign) {
                     dataMap[CHILD_EMAIL] = sign_email.text.toString()
                     dataMap[CHILD_USERNAME] = sign_username.text.toString()
                     dataMap[CHILD_PASSWORD] = sign_password.text.toString()
-
-                    showToast(dataMap.toString())
-
+                    dataMap[CHILD_FULLNAME] = ""
                     REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dataMap)
                         .addOnCompleteListener { updateData ->
                             if (updateData.isSuccessful) {
-                                showToast("Добро пожаловать")
-                                (activity as RegisterActivity).replaceActivity(MainActivity())
+                                showToast("Welcome")
+                                APP_ACTIVITY.replaceActivity(MainActivity())
                             } else {
                                 showToast(updateData.exception?.message.toString())
                             }

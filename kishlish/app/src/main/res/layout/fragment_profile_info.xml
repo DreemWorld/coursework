@@ -10,45 +10,68 @@
         android:id="@+id/profile_info_image"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/ic_account"
         android:layout_marginTop="20dp"
+        android:src="@drawable/ic_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/profile_info_image"
+        android:layout_marginEnd="60dp"
+        android:layout_marginStart="60dp"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/profile_info_image">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="full name" />
 
         <TextView
             android:id="@+id/profile_info_fullname"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:text="Имя и фамилия"
+            android:maxLines="1"
+            android:text=" "
             android:textSize="@dimen/normal_text" />
 
         <TextView
-            android:id="@+id/profile_info_username"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Никнейм"
-            android:textSize="@dimen/normal_text"/>
+            android:text="username"
+            />
+
+        <TextView
+            android:id="@+id/profile_info_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text=" "
+            android:textSize="@dimen/normal_text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bio"
+            />
 
         <TextView
             android:id="@+id/profile_info_bio"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="О себе"
-            android:textSize="@dimen/normal_text"/>
+            android:maxLines="7"
+            android:text=" "
+            android:textSize="@dimen/normal_text" />
 
     </LinearLayout>
 
@@ -58,9 +81,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Изменить данные"
-        app:layout_constraintBottom_toTopOf="@id/profile_info_exit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/profile_info_exit"
@@ -68,8 +91,8 @@
         android:layout_height="wrap_content"
         android:text="Сменить пользователя"
         android:textSize="@dimen/normal_text"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_info_change" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
