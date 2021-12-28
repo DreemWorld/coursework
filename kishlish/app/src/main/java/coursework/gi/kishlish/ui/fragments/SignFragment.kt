@@ -40,7 +40,6 @@ class SignFragment : Fragment(R.layout.fragment_sign) {
                     dataMap[CHILD_ID] = uid
                     dataMap[CHILD_EMAIL] = sign_email.text.toString()
                     dataMap[CHILD_USERNAME] = sign_username.text.toString()
-                    dataMap[CHILD_PASSWORD] = sign_password.text.toString()
                     dataMap[CHILD_FULLNAME] = ""
                     REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dataMap)
                         .addOnCompleteListener { updateData ->

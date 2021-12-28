@@ -6,5 +6,6 @@ data class UserModel(
     var bio: String = "",
     var fullname: String = "",
     var status: String = "",
+    var email: String = "",
     var photoUrl: String = "empty"
 )

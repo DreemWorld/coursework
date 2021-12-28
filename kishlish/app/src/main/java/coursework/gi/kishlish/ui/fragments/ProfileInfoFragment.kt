@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.fragment_profile_info.*
 class ProfileInfoFragment : Fragment(R.layout.fragment_profile_info) {
     override fun onStart() {
         super.onStart()
+
         profile_info_exit.setOnClickListener {
             AUTH.signOut()
             APP_ACTIVITY.replaceActivity(RegisterActivity())
