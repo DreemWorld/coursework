@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import coursework.gi.kishlish.databinding.ActivityRegisterBinding
 import coursework.gi.kishlish.ui.fragments.LoginFragment
+import coursework.gi.kishlish.ui.utilits.APP_ACTIVITY
+import coursework.gi.kishlish.ui.utilits.initFirebase
 import coursework.gi.kishlish.ui.utilits.replaceFragment
 
 class RegisterActivity : AppCompatActivity() {
@@ -19,6 +21,7 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        initFirebase()
         replaceFragment(LoginFragment(), false)
     }
 
