@@ -8,7 +8,10 @@ import coursework.gi.kishlish.R
 import coursework.gi.kishlish.databinding.ActivityMainBinding
 import coursework.gi.kishlish.ui.activity.RegisterActivity
 import coursework.gi.kishlish.ui.fragments.AddNewKishlishFragment
+import coursework.gi.kishlish.ui.fragments.InfoFragment
+import coursework.gi.kishlish.ui.fragments.KishlishFragment
 import coursework.gi.kishlish.ui.fragments.ProfileInfoFragment
+import coursework.gi.kishlish.ui.models.KishlishModel
 import coursework.gi.kishlish.ui.models.UserModel
 import coursework.gi.kishlish.ui.utilits.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -29,14 +32,17 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         APP_ACTIVITY = this
-        initFields()
-        initFunc()
+        initFirebase()
+        initUser{
+            initFields()
+            initFunc()
+        }
 
         bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.miHome -> {
                     toolBar.title = "My KishLish"
-                    replaceFragment(AddNewKishlishFragment(), addStack = false)
+                    replaceFragment(KishlishFragment(), addStack = false)
                     true
                 }
                 R.id.miProfile -> {
@@ -49,6 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         main_add_kishlish.setOnClickListener {
+            APP_ACTIVITY.title = "add Kishlish"
             replaceFragment(
                 AddNewKishlishFragment(),
                 addStack = false
@@ -56,16 +63,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initUser() {
-        REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
-            .addListenerForSingleValueEvent(AppValueEventListener {
-                USER = it.getValue(UserModel::class.java) ?: UserModel()
-            })
-    }
+
 
     private fun initFunc() {
         if (AUTH.currentUser != null) {
-            replaceFragment(ProfileInfoFragment(), false)
+            replaceFragment(InfoFragment(), false)
         } else {
             replaceActivity(RegisterActivity())
         }
@@ -73,10 +75,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFields() {
         toolBar = supportActionBar!!
-        AUTH = FirebaseAuth.getInstance()
-        initFirebase()
-        initUser()
-        2
     }
 
 }

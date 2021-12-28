@@ -5,5 +5,6 @@ data class KishlishModel(
     var name: String = "",
     var description: String = "",
     var photoUrl: String = "empty",
-    var price: String = ""
+    var price: String = "",
+    var user: String = ""
 )

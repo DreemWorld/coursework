@@ -11,7 +11,6 @@ import coursework.gi.kishlish.ui.models.KishlishModel
 import coursework.gi.kishlish.ui.models.UserModel
 
 const val NODE_USERS = "users"
-const val NODE_USERNAMES = "usernames"
 
 const val CHILD_ID = "id"
 const val CHILD_USERNAME = "username"
@@ -20,12 +19,14 @@ const val CHILD_EMAIL = "email"
 const val CHILD_PASSWORD = "password"
 const val CHILD_PHOTO_URL = "photoUrl"
 const val CHILD_BIO = "bio"
-const val CHILD_KISHLISHS = "kishlishs"
 
 const val NODE_KISHLISHS = "kishlishs"
 const val CHILD_NAME = "name"
 const val CHILD_DESCRIPTION = "description"
 const val CHILD_PRICE = "price"
+const val CHILD_CURRENT_USER = "current_user"
+
+const val NODE_KISHLISHS_USER = "kishlishs_user"
 
 const val FOLDER_PROFILE_IMAGES = "profile_images"
 const val FOLDER_KISHLISH_IMAGES = "kishlish_images"
@@ -37,23 +38,12 @@ lateinit var AUTH: FirebaseAuth
 lateinit var REF_DATABASE_ROOT: DatabaseReference
 lateinit var REF_STORAGE_ROOT: StorageReference
 
-
-inline fun initUser(crossinline function: () -> Unit) {
-    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
-        .addListenerForSingleValueEvent(AppValueEventListener {
-            USER = it.getValue(UserModel::class.java) ?: UserModel()
-            if (USER.username.isEmpty()) {
-                USER.username = CURRENT_UID
-            }
-            function()
-        })
-}
-
 inline fun putImageToStorage(uri: Uri, path: StorageReference, crossinline function: () -> Unit) {
     path.putFile(uri)
         .addOnSuccessListener { function() }
         .addOnFailureListener {
-            showToast(it.message.toString()) }
+            showToast(it.message.toString())
+        }
 }
 
 inline fun getUrlFromStorage(path: StorageReference, crossinline function: (url: String) -> Unit) {
@@ -86,6 +76,18 @@ fun initFirebase() {
     USER = UserModel()
     CURRENT_UID = AUTH.currentUser?.uid.toString()
 }
+
+inline fun initUser(crossinline function: () -> Unit) {
+    REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
+        .addListenerForSingleValueEvent(AppValueEventListener {
+            USER = it.getValue(UserModel::class.java) ?: UserModel()
+            if (USER.username.isEmpty()) {
+                USER.username = CURRENT_UID
+            }
+            function()
+        })
+}
+
 
 fun DataSnapshot.getKishlishModel(): KishlishModel =
     this.getValue(KishlishModel::class.java) ?: KishlishModel()
