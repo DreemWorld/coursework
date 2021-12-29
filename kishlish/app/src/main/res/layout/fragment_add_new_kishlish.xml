@@ -67,4 +67,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/add_name_kish_price"/>
 
+    <android.widget.Button
+        android:id="@+id/add_kish_with_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:layout_marginTop="10dp"
+        android:text="@string/add_kishlish_with_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_kish_btn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

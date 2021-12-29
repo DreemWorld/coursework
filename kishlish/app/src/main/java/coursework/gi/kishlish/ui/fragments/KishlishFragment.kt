@@ -24,10 +24,9 @@ class KishlishFragment : Fragment(R.layout.fragment_kishlish) {
         recyclerView.setHasFixedSize(true)
 
         kishlishArrayList = arrayListOf<Kishlish>()
-        val dataKishkishs = arrayListOf<String>()
-
-        searchCurrentKishlishs(dataKishkishs)
-        getKishlishData(dataKishkishs)
+        val dataKishlishs = arrayListOf<String>()
+        searchCurrentKishlishs(dataKishlishs)
+        getKishlishData(dataKishlishs)
 
     }
 

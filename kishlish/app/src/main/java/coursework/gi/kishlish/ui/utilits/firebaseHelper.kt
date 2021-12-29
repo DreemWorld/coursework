@@ -34,6 +34,7 @@ const val FOLDER_PROFILE_IMAGES = "profile_images"
 const val FOLDER_KISHLISH_IMAGES = "kishlish_images"
 const val FOLDER_ARCHIVE_KISHLISH_IMAGES = "archive_kishlish_images"
 
+lateinit var Kishlish: Kishlish
 lateinit var USER: User
 lateinit var CURRENT_UID: String
 lateinit var AUTH: FirebaseAuth
@@ -76,6 +77,7 @@ fun initFirebase() {
     REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
     REF_STORAGE_ROOT = FirebaseStorage.getInstance().reference
     USER = User()
+    Kishlish = Kishlish()
     CURRENT_UID = AUTH.currentUser?.uid.toString()
 }
 
