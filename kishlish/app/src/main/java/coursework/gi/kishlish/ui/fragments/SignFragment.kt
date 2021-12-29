@@ -3,7 +3,6 @@ package coursework.gi.kishlish.ui.fragments
 import androidx.fragment.app.Fragment
 import coursework.gi.kishlish.R
 import coursework.gi.kishlish.ui.MainActivity
-import coursework.gi.kishlish.ui.activity.RegisterActivity
 import coursework.gi.kishlish.ui.utilits.*
 import kotlinx.android.synthetic.main.fragment_sign.*
 
@@ -18,8 +17,8 @@ class SignFragment : Fragment(R.layout.fragment_sign) {
         super.onStart()
         label_to_login.setOnClickListener { replaceFragment(LoginFragment()) }
         btn_register.setOnClickListener {
-            email = sign_email.text.toString()
-            password = sign_password.text.toString()
+            email = emailOrMobile.text.toString()
+            password = password1.text.toString()
             username = sign_username.text.toString()
             if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
                 showToast("Enter the data")
@@ -38,7 +37,7 @@ class SignFragment : Fragment(R.layout.fragment_sign) {
                     val dataMap = mutableMapOf<String, Any>()
 
                     dataMap[CHILD_ID] = uid
-                    dataMap[CHILD_EMAIL] = sign_email.text.toString()
+                    dataMap[CHILD_EMAIL] = emailOrMobile.text.toString()
                     dataMap[CHILD_USERNAME] = sign_username.text.toString()
                     dataMap[CHILD_FULLNAME] = ""
                     REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dataMap)

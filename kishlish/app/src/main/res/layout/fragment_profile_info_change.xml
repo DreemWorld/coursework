@@ -11,6 +11,13 @@
         android:id="@+id/profile_info_change_fullname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:drawableLeft="@drawable/ic_account"
+        android:drawablePadding="3dp"
+        android:hint="Fullname"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/fields"
+        android:padding="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,28 +26,44 @@
         android:id="@+id/profile_info_change_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_account"
+        android:drawablePadding="3dp"
+        android:hint="Username"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/fields"
+        android:padding="10sp"
         app:layout_constraintTop_toBottomOf="@id/profile_info_change_fullname" />
 
     <EditText
         android:id="@+id/profile_info_change_bio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_account"
+        android:drawablePadding="3dp"
+        android:hint="Biography"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/fields"
+        android:padding="10sp"
         app:layout_constraintTop_toBottomOf="@id/profile_info_change_username" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/profile_info_change_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
         android:text="Change Photo"
+        android:background="@drawable/button"
         app:layout_constraintTop_toBottomOf="@id/profile_info_change_bio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+    <android.widget.Button
         android:id="@+id/profile_info_change_profile_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
         android:text="Change info about me"
+        android:background="@drawable/button"
         app:layout_constraintTop_toBottomOf="@id/profile_info_change_photo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
