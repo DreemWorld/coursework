@@ -20,6 +20,8 @@ const val CHILD_PASSWORD = "password"
 const val CHILD_PHOTO_URL = "photoUrl"
 const val CHILD_BIO = "bio"
 
+const val NODE_USERNAMES = "usernames"
+
 const val NODE_KISHLISHS = "kishlishs"
 const val CHILD_NAME = "name"
 const val CHILD_DESCRIPTION = "description"

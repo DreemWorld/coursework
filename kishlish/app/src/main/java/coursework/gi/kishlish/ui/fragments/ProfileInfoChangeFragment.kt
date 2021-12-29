@@ -30,6 +30,7 @@ class ProfileInfoChangeFragment : Fragment(R.layout.fragment_profile_info_change
         profile_info_change_bio.setText(USER.bio)
         profile_info_change_profile_info.setOnClickListener {
             changeData()
+            change()
         }
         profile_info_change_photo.setOnClickListener {
             changePhotoUser()
@@ -39,7 +40,6 @@ class ProfileInfoChangeFragment : Fragment(R.layout.fragment_profile_info_change
     private fun changeData() {
         val dataMap = mutableMapOf<String, Any>()
         dataMap[CHILD_BIO] = profile_info_change_bio.text.toString()
-        dataMap[CHILD_USERNAME] = profile_info_change_username.text.toString()
         dataMap[CHILD_FULLNAME] = profile_info_change_fullname.text.toString()
 
         if (dataMap[CHILD_USERNAME].toString().isEmpty() || dataMap[CHILD_FULLNAME].toString()
@@ -52,8 +52,6 @@ class ProfileInfoChangeFragment : Fragment(R.layout.fragment_profile_info_change
                 .addOnSuccessListener {
                     USER.bio = dataMap[CHILD_BIO].toString()
                     USER.fullname = dataMap[CHILD_FULLNAME].toString()
-                    USER.username = dataMap[CHILD_USERNAME].toString()
-                    showToast("updayee")
                 }
         }
     }
@@ -85,4 +83,54 @@ class ProfileInfoChangeFragment : Fragment(R.layout.fragment_profile_info_change
         }
     }
 
+    lateinit var newUsername: String
+
+    fun change() {
+        newUsername = profile_info_change_username.text.toString().lowercase()
+        if (newUsername.isEmpty()) {
+            showToast("Поле пустое")
+        } else {
+            REF_DATABASE_ROOT.child(NODE_USERNAMES)
+                .addListenerForSingleValueEvent(AppValueEventListener{
+                    if (it.hasChild(newUsername)) {
+                        showToast("Такой пользователь существует")
+                    } else {
+                        changeUsername()
+                    }
+                })
+        }
+    }
+
+    private fun changeUsername() {
+        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(newUsername).setValue(CURRENT_UID)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    updateCurrentUsername()
+                }
+            }
+    }
+
+    private fun updateCurrentUsername() {
+        REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_USERNAME).setValue(newUsername)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    deleteOldUsername()
+                } else {
+                    showToast(it.exception?.message.toString())
+                }
+            }
+    }
+
+    private fun deleteOldUsername() {
+        REF_DATABASE_ROOT.child(NODE_USERNAMES).child(USER.username).removeValue()
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    showToast("Данные обновленны")
+                    USER.username = newUsername
+                    fragmentManager?.popBackStack()
+                } else {
+                    showToast(it.exception?.message.toString())
+                }
+            }
+    }
 }
