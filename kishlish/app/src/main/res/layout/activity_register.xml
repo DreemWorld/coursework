@@ -4,18 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.MainMenuFragment">
+    tools:context=".ui.activity.RegisterActivity">
 
-    <ImageView
-        android:id="@+id/main_menu_image_delete"
-        android:layout_width="128sp"
-        android:layout_height="128sp"
-        android:src="@drawable/ic_baseline_check_24"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_container_upp"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

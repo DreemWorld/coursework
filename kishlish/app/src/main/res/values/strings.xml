@@ -2,4 +2,10 @@
     <string name="app_name">kishlish</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_profile">Мой профиль</string>
+    <string name="my_wishes">Мои желания</string>
+    <string name="profile_menu_name_change">Изменить имя</string>
+    <string name="profile_menu_exit">Выход из аккаунта</string>
+    <string name="my_friends">Знакомые</string>
+    <string name="add_kishlish">Add kishlish</string>
 </resources>
