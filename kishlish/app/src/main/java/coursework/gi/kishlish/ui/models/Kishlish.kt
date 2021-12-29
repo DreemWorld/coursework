@@ -1,6 +1,6 @@
 package coursework.gi.kishlish.ui.models
 
-data class KishlishModel(
+data class Kishlish(
     val id: String = "",
     var name: String = "",
     var description: String = "",
