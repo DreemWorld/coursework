@@ -8,7 +8,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import coursework.gi.kishlish.ui.models.Kishlish
-import coursework.gi.kishlish.ui.models.UserModel
+import coursework.gi.kishlish.ui.models.User
 
 const val NODE_USERS = "users"
 
@@ -32,7 +32,7 @@ const val FOLDER_PROFILE_IMAGES = "profile_images"
 const val FOLDER_KISHLISH_IMAGES = "kishlish_images"
 const val FOLDER_ARCHIVE_KISHLISH_IMAGES = "archive_kishlish_images"
 
-lateinit var USER: UserModel
+lateinit var USER: User
 lateinit var CURRENT_UID: String
 lateinit var AUTH: FirebaseAuth
 lateinit var REF_DATABASE_ROOT: DatabaseReference
@@ -62,7 +62,7 @@ inline fun putUrlToDataBase(url: String, crossinline function: () -> Unit) {
 fun initUser() {
     REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
         .addListenerForSingleValueEvent(AppValueEventListener {
-            USER = it.getValue(UserModel::class.java) ?: UserModel()
+            USER = it.getValue(User::class.java) ?: User()
             if (USER.username.isEmpty()) {
                 USER.username = CURRENT_UID
             }
@@ -73,14 +73,14 @@ fun initFirebase() {
     AUTH = FirebaseAuth.getInstance()
     REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
     REF_STORAGE_ROOT = FirebaseStorage.getInstance().reference
-    USER = UserModel()
+    USER = User()
     CURRENT_UID = AUTH.currentUser?.uid.toString()
 }
 
 inline fun initUser(crossinline function: () -> Unit) {
     REF_DATABASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
         .addListenerForSingleValueEvent(AppValueEventListener {
-            USER = it.getValue(UserModel::class.java) ?: UserModel()
+            USER = it.getValue(User::class.java) ?: User()
             if (USER.username.isEmpty()) {
                 USER.username = CURRENT_UID
             }
