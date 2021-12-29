@@ -7,11 +7,11 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64sp"
         android:gravity="center"
+        android:text="Надоело получать ненужные подарки? Это приложение как раз для вас. Вы сможете составить список пожеланий на праздничные мероприятия и ваши друзья и знакомые смогут воспользоваться этим приложением и посмотреть чего вы жаждете получить!"
         android:textColor="@color/label_white"
-        android:text="Вся инфа о приложении"
-        android:textSize="40dp" />
-
+        android:textSize="30dp" />
 </FrameLayout>

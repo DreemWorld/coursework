@@ -7,5 +7,5 @@
     <string name="profile_menu_name_change">Изменить имя</string>
     <string name="profile_menu_exit">Выход из аккаунта</string>
     <string name="my_friends">Знакомые</string>
-    <string name="add_kishlish">Add kishlish</string>
+    <string name="add_kishlish">Add item to kishlish</string>
 </resources>
