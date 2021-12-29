@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         APP_ACTIVITY = this
         initFirebase()
-        initUser{
+        initUser {
             initFields()
             initFunc()
         }
@@ -59,7 +59,6 @@ class MainActivity : AppCompatActivity() {
             )
         }
     }
-
 
 
     private fun initFunc() {

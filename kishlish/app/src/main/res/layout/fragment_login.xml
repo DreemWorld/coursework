@@ -14,7 +14,7 @@
         android:fontFamily="sans-serif-medium"
         android:text="Sign In"
         android:textAllCaps="false"
-        android:textColor="@color/black"
+        android:textColor="@color/label_white"
         android:textSize="48sp"
         android:textStyle="bold"
         android:typeface="normal"
@@ -29,25 +29,31 @@
         android:id="@+id/login_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:background="@drawable/fields"
         android:drawableLeft="@drawable/ic_account"
         android:drawablePadding="3dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+        android:padding="10sp"
         app:layout_constraintBottom_toTopOf="@+id/login_password"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:drawableLeft="@drawable/ic_key"
-        android:drawablePadding="3dp"
         android:id="@+id/login_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
+        android:background="@drawable/fields"
+        android:drawableLeft="@drawable/ic_key"
+        android:drawablePadding="3dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
+        android:padding="10sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -56,30 +62,34 @@
         android:id="@+id/label_fp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="41dp"
         android:text="Forget Password?"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_login"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_password" />
+        app:layout_constraintTop_toBottomOf="@+id/login_password"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_login"
         android:layout_width="125dp"
         android:layout_height="49dp"
         android:layout_marginTop="324dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginEnd="52dp"
+        android:background="@drawable/button"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <android.widget.Button
         android:id="@+id/btn_login_with_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/button"
         android:text="Login With Email"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/label_dhaa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -89,6 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:layout_marginBottom="32dp"
+        android:textColor="@color/label_white"
         android:text="Don't have an account?"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/label_to_register"
@@ -100,6 +111,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
         android:text="Sign Up"
+        android:textColor="@color/label_white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -112,9 +124,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="--- or ---"
+        android:textColor="@color/label_white"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/btn_login_with_email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        app:layout_constraintVertical_bias="0.984" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,6 @@ package coursework.gi.kishlish.ui.fragments
 import androidx.fragment.app.Fragment
 import coursework.gi.kishlish.R
 import coursework.gi.kishlish.ui.MainActivity
-import coursework.gi.kishlish.ui.activity.RegisterActivity
 import coursework.gi.kishlish.ui.utilits.*
 import kotlinx.android.synthetic.main.fragment_sign.*
 
