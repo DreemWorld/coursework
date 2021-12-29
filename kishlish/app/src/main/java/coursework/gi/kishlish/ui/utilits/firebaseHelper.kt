@@ -7,7 +7,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import coursework.gi.kishlish.ui.models.KishlishModel
+import coursework.gi.kishlish.ui.models.Kishlish
 import coursework.gi.kishlish.ui.models.UserModel
 
 const val NODE_USERS = "users"
@@ -89,5 +89,5 @@ inline fun initUser(crossinline function: () -> Unit) {
 }
 
 
-fun DataSnapshot.getKishlishModel(): KishlishModel =
-    this.getValue(KishlishModel::class.java) ?: KishlishModel()
+fun DataSnapshot.getKishlishModel(): Kishlish =
+    this.getValue(Kishlish::class.java) ?: Kishlish()

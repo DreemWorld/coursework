@@ -3,7 +3,6 @@ package coursework.gi.kishlish.ui
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
 import coursework.gi.kishlish.R
 import coursework.gi.kishlish.databinding.ActivityMainBinding
 import coursework.gi.kishlish.ui.activity.RegisterActivity
@@ -11,8 +10,6 @@ import coursework.gi.kishlish.ui.fragments.AddNewKishlishFragment
 import coursework.gi.kishlish.ui.fragments.InfoFragment
 import coursework.gi.kishlish.ui.fragments.KishlishFragment
 import coursework.gi.kishlish.ui.fragments.ProfileInfoFragment
-import coursework.gi.kishlish.ui.models.KishlishModel
-import coursework.gi.kishlish.ui.models.UserModel
 import coursework.gi.kishlish.ui.utilits.*
 import kotlinx.android.synthetic.main.activity_main.*
 
