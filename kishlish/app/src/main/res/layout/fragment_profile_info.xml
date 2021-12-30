@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto"
-        android:text="Username"
+        android:text="ID
+"
         android:textColor="@color/label_white"
         android:textSize="@dimen/normal_text"
         app:layout_constraintTop_toBottomOf="@id/profile_info_exit"
@@ -37,8 +38,8 @@
 
     <ImageView
         android:id="@+id/profile_info_image"
-        android:layout_width="159dp"
-        android:layout_height="152dp"
+        android:layout_width="131dp"
+        android:layout_height="120dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/ic_account"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +121,7 @@
     <android.widget.Button
         android:id="@+id/profile_info_change"
         android:layout_width="150dp"
-        android:layout_height="44dp"
+        android:layout_height="40dp"
         android:layout_marginTop="0dp"
         android:background="@drawable/button"
         android:text="Edit data"
@@ -133,8 +134,8 @@
     <android.widget.Button
         android:id="@+id/profile_info_exit"
         android:layout_width="150dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/button"
         android:text="Change user"
         android:textSize="@dimen/normal_text"
