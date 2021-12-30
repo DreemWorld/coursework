@@ -42,7 +42,6 @@ class AddNewKishlishFragment : Fragment(R.layout.fragment_add_new_kishlish) {
             putImageToStorage(uri, path) {
                 getUrlFromStorage(path) {
                     putUrlToDataBase(it) {
-                        Kishlish.photoUrl = it
                         addKishlish()
                     }
                 }
