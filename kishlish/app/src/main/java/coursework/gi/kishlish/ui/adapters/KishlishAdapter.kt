@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coursework.gi.kishlish.R
 import coursework.gi.kishlish.ui.models.Kishlish
 import coursework.gi.kishlish.ui.utilits.downloadAndSetImage
+import coursework.gi.kishlish.ui.utilits.downloadAndSetImageKishLish
 import kotlinx.android.synthetic.main.kishlish_item.view.*
 
 class KishlishAdapter(private val kishlishList: ArrayList<Kishlish>) :
@@ -28,7 +29,7 @@ class KishlishAdapter(private val kishlishList: ArrayList<Kishlish>) :
             holder.name.text = currentItem.name
             holder.description.text = currentItem.description
             holder.price.text = currentItem.price
-            holder.image.downloadAndSetImage(currentItem.photoUrl)
+            holder.image.downloadAndSetImageKishLish(currentItem.photoUrl)
     }
 
     override fun getItemCount(): Int {

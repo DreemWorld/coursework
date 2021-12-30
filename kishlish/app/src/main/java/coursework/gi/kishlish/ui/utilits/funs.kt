@@ -48,6 +48,14 @@ fun hideKeyBoard() {
     imm.hideSoftInputFromWindow(APP_ACTIVITY.window.decorView.windowToken, 0)
 }
 
+fun ImageView.downloadAndSetImageKishLish(url:String){
+    Picasso.get()
+        .load(url)
+        .fit()
+        .placeholder(R.drawable.ic_launcher_foreground)
+        .into(this)
+}
+
 fun ImageView.downloadAndSetImage(url: String) {
     Picasso.get()
         .load(url)
