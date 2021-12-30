@@ -6,10 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import coursework.gi.kishlish.R
 import coursework.gi.kishlish.databinding.ActivityMainBinding
 import coursework.gi.kishlish.ui.activity.RegisterActivity
-import coursework.gi.kishlish.ui.fragments.AddNewKishlishFragment
-import coursework.gi.kishlish.ui.fragments.InfoFragment
-import coursework.gi.kishlish.ui.fragments.KishlishFragment
-import coursework.gi.kishlish.ui.fragments.ProfileInfoFragment
+import coursework.gi.kishlish.ui.fragments.*
 import coursework.gi.kishlish.ui.utilits.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -37,6 +34,11 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
+                R.id.miSearch -> {
+                    toolBar.title = "Search"
+                    replaceFragment(SearchFragment(), false)
+                    true
+                }
                 R.id.miHome -> {
                     toolBar.title = "My KishLish"
                     replaceFragment(KishlishFragment(), addStack = false)

@@ -28,5 +28,6 @@ class ProfileInfoFragment : Fragment(R.layout.fragment_profile_info) {
         profile_info_fullname.text = USER.fullname
         profile_info_username.text = USER.username
         profile_info_image.downloadAndSetImage(USER.photoUrl)
+        code_text.setText(USER.id)
     }
 }

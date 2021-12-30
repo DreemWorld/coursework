@@ -9,9 +9,7 @@ import com.google.firebase.database.ValueEventListener
 import coursework.gi.kishlish.R
 import coursework.gi.kishlish.ui.adapters.KishlishAdapter
 import coursework.gi.kishlish.ui.models.Kishlish
-import coursework.gi.kishlish.ui.utilits.APP_ACTIVITY
-import coursework.gi.kishlish.ui.utilits.NODE_KISHLISHS
-import coursework.gi.kishlish.ui.utilits.REF_DATABASE_ROOT
+import coursework.gi.kishlish.ui.utilits.*
 import kotlinx.android.synthetic.main.fragment_kishlish.*
 
 class KishlishFragment : Fragment(R.layout.fragment_kishlish) {
@@ -26,17 +24,42 @@ class KishlishFragment : Fragment(R.layout.fragment_kishlish) {
         recyclerView.setHasFixedSize(true)
 
         kishlishArrayList = arrayListOf<Kishlish>()
-        getKishlishData()
+        val dataKishlishs = arrayListOf<String>()
+        searchCurrentKishlishs(dataKishlishs)
+        getKishlishData(dataKishlishs)
+
     }
 
-    private fun getKishlishData() {
+    private fun searchCurrentKishlishs(dataKishkishs: ArrayList<String>) {
+        REF_DATABASE_ROOT.child(NODE_KISHLISHS_USER).child(CURRENT_UID)
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()) {
+                        snapshot.children.forEach { kishlishSnapshot ->
+                            dataKishkishs.add(kishlishSnapshot.key.toString())
+                        }
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            })
+    }
+
+    private fun getKishlishData(dataKishkishs: ArrayList<String>) {
         REF_DATABASE_ROOT.child(NODE_KISHLISHS).addValueEventListener(object : ValueEventListener {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
-                    for (kishlishSnapshot in snapshot.children) {
-                        val kishlish = kishlishSnapshot.getValue(Kishlish::class.java)
-                        kishlishArrayList.add(kishlish!!)
+                    snapshot.children.forEach { kishlishSnapshot ->
+                        dataKishkishs.forEach { dataKish ->
+                            if (kishlishSnapshot.key.toString() == dataKish) {
+                                val kishlish = kishlishSnapshot.getValue(Kishlish::class.java)
+                                kishlishArrayList.add(kishlish!!)
+                            }
+                        }
                     }
                     recyclerView.adapter = KishlishAdapter(kishlishArrayList)
                 }

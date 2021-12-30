@@ -40,6 +40,21 @@ class SignFragment : Fragment(R.layout.fragment_sign) {
                     dataMap[CHILD_EMAIL] = sign_email.text.toString()
                     dataMap[CHILD_USERNAME] = sign_username.text.toString()
                     dataMap[CHILD_FULLNAME] = ""
+                    checkUsername(sign_username.text.toString(), uid, dataMap)
+
+                } else {
+                    showToast(create.exception?.message.toString())
+                }
+            }
+
+    }
+
+    private fun checkUsername(userName: String, uid: String, dataMap: MutableMap<String, Any>) {
+        REF_DATABASE_ROOT.child(NODE_USERNAMES)
+            .addListenerForSingleValueEvent(AppValueEventListener {
+                if (it.hasChild(userName)) {
+                    showToast("Username is occupied")
+                } else {
                     REF_DATABASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dataMap)
                         .addOnCompleteListener { updateData ->
                             if (updateData.isSuccessful) {
@@ -49,11 +64,7 @@ class SignFragment : Fragment(R.layout.fragment_sign) {
                                 showToast(updateData.exception?.message.toString())
                             }
                         }
-                } else {
-                    showToast(create.exception?.message.toString())
                 }
-            }
-
+            })
     }
-
 }

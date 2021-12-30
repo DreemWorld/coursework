@@ -20,6 +20,8 @@ const val CHILD_PASSWORD = "password"
 const val CHILD_PHOTO_URL = "photoUrl"
 const val CHILD_BIO = "bio"
 
+const val NODE_USERNAMES = "usernames"
+
 const val NODE_KISHLISHS = "kishlishs"
 const val CHILD_NAME = "name"
 const val CHILD_DESCRIPTION = "description"
@@ -32,6 +34,7 @@ const val FOLDER_PROFILE_IMAGES = "profile_images"
 const val FOLDER_KISHLISH_IMAGES = "kishlish_images"
 const val FOLDER_ARCHIVE_KISHLISH_IMAGES = "archive_kishlish_images"
 
+lateinit var Kishlish: Kishlish
 lateinit var USER: User
 lateinit var CURRENT_UID: String
 lateinit var AUTH: FirebaseAuth
@@ -74,6 +77,7 @@ fun initFirebase() {
     REF_DATABASE_ROOT = FirebaseDatabase.getInstance().reference
     REF_STORAGE_ROOT = FirebaseStorage.getInstance().reference
     USER = User()
+    Kishlish = Kishlish()
     CURRENT_UID = AUTH.currentUser?.uid.toString()
 }
 
