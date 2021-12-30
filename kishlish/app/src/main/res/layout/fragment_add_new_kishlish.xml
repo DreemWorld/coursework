@@ -69,8 +69,8 @@
 
     <android.widget.Button
         android:id="@+id/add_kish_with_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="44dp"
         android:background="@drawable/button"
         android:layout_marginTop="10dp"
         android:text="@string/add_kishlish_with_image"
